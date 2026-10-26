@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riad L'Ambre d'Or | Boutique Luxury Riad Marrakech</title>
+    
+    <!-- Editorial Typography: Cormorant Garamond, Cinzel & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        warmIvory: '#F9F6F0',
+                        ivoryCard: '#F2ECE1',
+                        ivoryBorder: '#E6DCcb',
+                        forestGreen: '#18332A',
+                        forestDark: '#0F211B',
+                        forestLight: '#26483C',
+                        mutedGold: '#C5A869',
+                        mutedGoldHover: '#B59654',
+                        goldSubtle: 'rgba(197, 168, 105, 0.18)',
+                        charcoal: '#1A1918',
+                        charcoalLight: '#2F2D2A',
+                        charcoalMuted: '#5C5852',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        title: ['Cinzel', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        superWide: '.3em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth subtle noise & grain */
+        .luxury-bg {
+            background-color: #F9F6F0;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(15, 33, 27, 0.45) 0%, rgba(15, 33, 27, 0.75) 100%);
+        }
+
+        .gold-border {
+            border: 1px solid rgba(197, 168, 105, 0.35);
+        }
+
+        .editorial-shadow {
+            box-shadow: 0 20px 45px -15px rgba(24, 51, 42, 0.08);
+        }
+
+        /* Subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A869;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #18332A;
+        }
+    </style>
+</head>
+
+<body class="luxury-bg text-charcoal font-sans antialiased overflow-x-hidden selection:bg-forestGreen selection:text-warmIvory">
+
+    <!-- TOP BAR: CONCEIRGE & FICTIONAL DISCLAIMER -->
+    <div class="bg-forestDark text-warmIvory/80 text-[11px] tracking-wider py-2 px-4 border-b border-mutedGold/20 font-sans">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-1.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-mutedGold"></i>
+                    <span data-i18n="top-address">Derb Sidi Ishak, Medina, 40000 Marrakech, Morocco</span>
+                </span>
+                <span class="hidden sm:inline-block text-warmIvory/40">|</span>
+                <span class="hidden sm:flex items-center gap-1.5 text-warmIvory/60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span data-i18n="fictional-badge">[Fictional Showcase Concept]</span>
+                </span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <!-- Phone -->
+                <a href="tel:+212524000000" class="hover:text-mutedGold transition-colors flex items-center gap-1.5">
+                    <i data-lucide="phone" class="w-3 h-3 text-mutedGold"></i>
+                    <span>+212 524 00 00 00</span>
+                </a>
+                
+                <!-- Language Selector -->
+                <div class="flex items-center border border-mutedGold/40 rounded px-2 py-0.5 text-[10px] tracking-widest uppercase">
+                    <button onclick="setLanguage('en')" id="lang-btn-en" class="text-mutedGold font-semibold px-1 transition-colors">EN</button>
+                    <span class="text-mutedGold/40 text-[9px]">/</span>
+                    <button onclick="setLanguage('fr')" id="lang-btn-fr" class="text-warmIvory/60 hover:text-mutedGold px-1 transition-colors">FR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN EDITORIAL NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-warmIvory/90 backdrop-blur-md border-b border-ivoryBorder transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col items-start group">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rotate-45 border border-mutedGold bg-forestGreen inline-block"></span>
+                    <span class="font-title text-xl md:text-2xl tracking-widest text-forestDark font-bold uppercase group-hover:text-forestLight transition-colors">
+                        L'Ambre d'Or
+                    </span>
+                </div>
+                <span class="font-serif italic text-xs tracking-[0.25em] text-mutedGold pl-4 uppercase">
+                    Maison d'Hôtes & Spa • Marrakech
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-9 text-xs font-medium tracking-widest uppercase text-charcoalLight">
+                <a href="#about" class="hover:text-mutedGold transition-colors py-2" data-i18n="nav-riad">The Riad</a>
+                <a href="#hospitality" class="hover:text-mutedGold transition-colors py-2" data-i18n="nav-hospitality">Hospitality</a>
+                <a href="#rooms" class="hover:text-mutedGold transition-colors py-2" data-i18n="nav-rooms">Suites</a>
+                <a href="#gallery" class="hover:text-mutedGold transition-colors py-2" data-i18n="nav-gallery">Gallery</a>
+                <a href="#location" class="hover:text-mutedGold transition-colors py-2" data-i18n="nav-location">Location</a>
+                <a href="#contact" class="hover:text-mutedGold transition-colors py-2" data-i18n="nav-contact">Contact</a>
+            </nav>
+
+            <!-- Action buttons -->
+            <div class="flex items-center space-x-3">
+                <!-- Reserve Button -->
+                <button onclick="openBookingModal()" class="hidden sm:inline-flex items-center gap-2 bg-forestGreen hover:bg-forestDark text-warmIvory px-5 py-3 text-xs font-semibold tracking-widest uppercase transition-all duration-300 border border-mutedGold/40">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-mutedGold"></i>
+                    <span data-i18n="btn-book">Reserve Suite</span>
+                </button>
+
+                <!-- WhatsApp Quick CTA -->
+                <a href="https://wa.me/212600000000?text=Hello%20Riad%20L'Ambre%20d'Or,%20I%20would%20like%20to%20inquire%20about%20a%20stay" target="_blank" class="hidden md:inline-flex items-center gap-2 text-forestDark hover:text-mutedGold p-2 text-xs font-medium transition-colors border border-ivoryBorder rounded" title="WhatsApp Concierge">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                    <span class="tracking-wider">WhatsApp</span>
+                </a>
+
+                <!-- Mobile Menu Hamburger -->
+                <button onclick="toggleMobileNav()" class="p-2 lg:hidden text-forestDark focus:outline-none" aria-label="Toggle Navigation">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-warmIvory border-b border-ivoryBorder px-6 py-6 shadow-xl">
+            <div class="flex flex-col space-y-4 text-center text-xs tracking-widest uppercase font-medium">
+                <a href="#about" onclick="toggleMobileNav()" class="py-2 hover:text-mutedGold transition-colors" data-i18n="nav-riad">The Riad</a>
+                <a href="#hospitality" onclick="toggleMobileNav()" class="py-2 hover:text-mutedGold transition-colors" data-i18n="nav-hospitality">Hospitality</a>
+                <a href="#rooms" onclick="toggleMobileNav()" class="py-2 hover:text-mutedGold transition-colors" data-i18n="nav-rooms">Suites</a>
+                <a href="#gallery" onclick="toggleMobileNav()" class="py-2 hover:text-mutedGold transition-colors" data-i18n="nav-gallery">Gallery</a>
+                <a href="#location" onclick="toggleMobileNav()" class="py-2 hover:text-mutedGold transition-colors" data-i18n="nav-location">Location</a>
+                <a href="#contact" onclick="toggleMobileNav()" class="py-2 hover:text-mutedGold transition-colors" data-i18n="nav-contact">Contact</a>
+                <div class="pt-4 border-t border-ivoryBorder flex flex-col gap-3">
+                    <button onclick="toggleMobileNav(); openBookingModal();" class="w-full bg-forestGreen text-warmIvory py-3 text-xs tracking-widest uppercase font-semibold">
+                        <span data-i18n="btn-book">Reserve Suite</span>
+                    </button>
+                    <a href="https://wa.me/212600000000?text=Hello%20Riad%20L'Ambre%20d'Or,%20I%20would%20like%20to%20inquire%20about%20a%20stay" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-800 text-warmIvory py-3 text-xs tracking-widest uppercase">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Concierge
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FULL SCREEN HERO SECTION -->
+    <section class="relative min-h-[92vh] flex items-center justify-center text-warmIvory overflow-hidden">
+        <!-- Full-width Photography of Riad Courtyard & Plunge Pool -->
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-100"
+             style="background-image: url('https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=2400&q=85');">
+        </div>
+        
+        <!-- Deep Forest Green & Charcoal Vignette Gradient -->
+        <div class="absolute inset-0 hero-gradient"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20">
+            <!-- Refined Top Monogram Tag -->
+            <div class="inline-flex items-center gap-3 px-4 py-1.5 border border-mutedGold/40 bg-forestDark/60 backdrop-blur-md mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-mutedGold"></span>
+                <span class="text-mutedGold text-xs tracking-widest uppercase font-medium" data-i18n="hero-tag">
+                    Boutique Riad & Spa • Medina Marrakech
+                </span>
+            </div>
+
+            <!-- Requested Exact Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight text-warmIvory leading-[1.08] mb-8">
+                <span data-i18n="hero-title">A Hidden Oasis in the Heart of Marrakech</span>
+            </h1>
+
+            <p class="font-sans text-sm sm:text-base md:text-lg text-warmIvory/85 max-w-2xl mx-auto mb-10 leading-relaxed font-light tracking-wide" data-i18n="hero-subtitle">
+                Beyond the antique cedar doors lies an architectural sanctuary of carved arches, serene emerald waters, and authentic Moroccan hospitality.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <!-- Requested Discover Our Rooms Button -->
+                <a href="#rooms" class="w-full sm:w-auto bg-mutedGold hover:bg-mutedGoldHover text-forestDark font-sans font-semibold tracking-widest uppercase px-8 py-4 text-xs transition-all duration-300 shadow-lg">
+                    <span data-i18n="btn-discover-rooms">Discover Our Rooms</span>
+                </a>
+                
+                <!-- Functional WhatsApp Contact Button -->
+                <a href="https://wa.me/212600000000?text=Hello%20Riad%20L'Ambre%20d'Or,%20I%20would%20like%20to%20plan%20my%20arrival" target="_blank" class="w-full sm:w-auto bg-forestDark/80 hover:bg-forestDark border border-mutedGold/40 text-warmIvory font-sans tracking-widest uppercase px-7 py-4 text-xs transition-all duration-300 inline-flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                    <span data-i18n="btn-whatsapp-hero">WhatsApp Concierge</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Subtle Bottom Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-warmIvory/60 hover:text-mutedGold transition-colors text-xs tracking-widest uppercase">
+            <span class="text-[10px] mb-2 tracking-superWide" data-i18n="scroll-down">Explore</span>
+            <div class="w-[1px] h-8 bg-mutedGold/50 animate-pulse"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE RIAD ARCHITECTURE & STORY -->
+    <section id="about" class="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left Editorial Text (7 cols) -->
+            <div class="lg:col-span-7">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-8 h-[1px] bg-mutedGold"></span>
+                    <span class="text-mutedGold text-xs tracking-widest uppercase font-medium" data-i18n="about-tag">Architectural Heritage</span>
+                </div>
+                
+                <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-forestDark font-normal leading-tight mb-8">
+                    <span data-i18n="about-heading-1">A Restored 18th Century Sanctuary</span><br>
+                    <span class="italic text-mutedGold" data-i18n="about-heading-2">Crafted with Quiet Reverence</span>
+                </h2>
+
+                <div class="space-y-6 text-charcoalMuted text-sm sm:text-base leading-relaxed font-sans font-light">
+                    <p data-i18n="about-p1">
+                        Located in the historic quarter of the Medina, Riad L'Ambre d'Or was conceived as a private refuge where the vibrant energy of the souks gives way to the gentle murmur of falling water and the fragrance of blossoming bitter orange trees.
+                    </p>
+                    <p data-i18n="about-p2">
+                        Restored by master Moroccan maalems (artisans), every corner showcases traditional techniques: hand-chiselled zellige tiles from Fez, hand-carved cedarwood ceilings, and polished natural lime plaster (tadelakt). Here, understated luxury meets mindful hospitality.
+                    </p>
+                </div>
+
+                <!-- Architectural details bullets -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10 mt-10 border-t border-ivoryBorder">
+                    <div>
+                        <span class="block font-serif text-3xl text-forestDark">7</span>
+                        <span class="text-xs uppercase tracking-widest text-charcoalMuted mt-1 block" data-i18n="stat-suites">Intimate Suites</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-3xl text-forestDark">18th c.</span>
+                        <span class="text-xs uppercase tracking-widest text-charcoalMuted mt-1 block" data-i18n="stat-century">Restored Palace</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-3xl text-forestDark">360°</span>
+                        <span class="text-xs uppercase tracking-widest text-charcoalMuted mt-1 block" data-i18n="stat-views">Atlas & Medina Vistas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual Layout (5 cols) -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative overflow-hidden editorial-shadow border border-ivoryBorder bg-ivoryCard">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Riad courtyard and arches" 
+                         class="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Small overlapping offset photo -->
+                <div class="hidden sm:block absolute -bottom-8 -left-8 w-48 h-56 overflow-hidden border-4 border-warmIvory shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" 
+                         alt="Traditional mint tea ceremony" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: MOROCCAN HOSPITALITY, COURTYARD, BREAKFAST & POOL -->
+    <section id="hospitality" class="py-24 bg-ivoryCard border-y border-ivoryBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-mutedGold text-xs tracking-widest uppercase font-medium block mb-3" data-i18n="hosp-tag">The Art of Living</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-forestDark font-normal mb-4" data-i18n="hosp-title">Moroccan Hospitality & Living</h2>
+                <div class="w-12 h-[1px] bg-mutedGold mx-auto mb-6"></div>
+                <p class="font-sans text-sm sm:text-base text-charcoalMuted font-light leading-relaxed" data-i18n="hosp-desc">
+                    A sensory journey steeped in genuine care, from unhurried mornings on the rooftop terrace to the serene embrace of the central courtyard.
+                </p>
+            </div>
+
+            <!-- 3 Column Showcase: Courtyard & Pool, Gourmet Breakfast, Hammam Ritual -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Pillar 1: The Central Courtyard & Pool -->
+                <div class="bg-warmIvory border border-ivoryBorder overflow-hidden flex flex-col group editorial-shadow">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" 
+                             alt="Emerald Swimming Pool in Central Patio" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-forestDark/20"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] tracking-widest uppercase text-mutedGold font-semibold block mb-2" data-i18n="pillar1-sub">Patio Sanctuary</span>
+                            <h3 class="font-serif text-2xl text-forestDark mb-3" data-i18n="pillar1-title">The Courtyard & Pool</h3>
+                            <p class="text-xs sm:text-sm text-charcoalMuted leading-relaxed font-light mb-6" data-i18n="pillar1-text">
+                                The architectural heart of the riad. An open-sky patio featuring an emerald-tiled plunge pool, towering banana plants, and candlelit lanterns that mirror in calm waters each dusk.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-charcoalMuted space-y-2 border-t border-ivoryBorder pt-4 font-light">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-mutedGold"></i> <span data-i18n="p1-feat1">Heated plunge pool year-round</span></li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-mutedGold"></i> <span data-i18n="p1-feat2">Courtyard lounging & afternoon tea</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: The Moroccan Breakfast Experience -->
+                <div class="bg-warmIvory border border-ivoryBorder overflow-hidden flex flex-col group editorial-shadow">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=900&q=80" 
+                             alt="Traditional Moroccan Breakfast spread" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-forestDark/20"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] tracking-widest uppercase text-mutedGold font-semibold block mb-2" data-i18n="pillar2-sub">Morning Ritual</span>
+                            <h3 class="font-serif text-2xl text-forestDark mb-3" data-i18n="pillar2-title">Artisan Breakfast</h3>
+                            <p class="text-xs sm:text-sm text-charcoalMuted leading-relaxed font-light mb-6" data-i18n="pillar2-text">
+                                Prepared fresh every morning by our resident Dada. Enjoy warm msemen, baghrir honey pancakes, freshly squeezed orange juice, Atlas olive oils, goat cheese, and spiced Moroccan tea.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-charcoalMuted space-y-2 border-t border-ivoryBorder pt-4 font-light">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-mutedGold"></i> <span data-i18n="p2-feat1">Served on rooftop or in private suites</span></li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-mutedGold"></i> <span data-i18n="p2-feat2">Fresh local market produce daily</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Traditional Hammam & Spa -->
+                <div class="bg-warmIvory border border-ivoryBorder overflow-hidden flex flex-col group editorial-shadow">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" 
+                             alt="Marble Hammam and Wellness Spa" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-forestDark/20"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] tracking-widest uppercase text-mutedGold font-semibold block mb-2" data-i18n="pillar3-sub">Wellness & Purification</span>
+                            <h3 class="font-serif text-2xl text-forestDark mb-3" data-i18n="pillar3-title">The Marble Hammam</h3>
+                            <p class="text-xs sm:text-sm text-charcoalMuted leading-relaxed font-light mb-6" data-i18n="pillar3-text">
+                                Experience centuries-old cleansing rituals. Black eucalyptus soap, ghassoul wraps infused with rosewater, and restorative massage treatments using pure organic argan oil.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-charcoalMuted space-y-2 border-t border-ivoryBorder pt-4 font-light">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-mutedGold"></i> <span data-i18n="p3-feat1">Private couple hammam sessions</span></li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-mutedGold"></i> <span data-i18n="p3-feat2">Organic botanical botanicals</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ROOMS & SUITES GALLERY -->
+    <section id="rooms" class="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span class="text-mutedGold text-xs tracking-widest uppercase font-medium block mb-3" data-i18n="rooms-tag">Private Living</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-forestDark font-normal" data-i18n="rooms-title">Rooms & Suites</h2>
+            </div>
+            <p class="max-w-md text-xs sm:text-sm text-charcoalMuted font-light leading-relaxed" data-i18n="rooms-intro">
+                Each suite is individually curated with hand-woven wool rugs, handcrafted brass fixtures, Egyptian cotton linens, and bespoke ensuite tadelakt bathrooms.
+            </p>
+        </div>
+
+        <!-- Suites Editorial Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Suite 1: Suite Royale Shéhérazade -->
+            <div class="bg-ivoryCard border border-ivoryBorder overflow-hidden group flex flex-col justify-between editorial-shadow">
+                <div>
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Suite Royale Shéhérazade" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-forestDark/80 text-warmIvory text-[11px] px-3 py-1 font-serif tracking-widest">
+                            <span data-i18n="suite1-rate">€340 / Night</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center text-[11px] text-mutedGold tracking-widest uppercase font-medium mb-2">
+                            <span>60 m² / 645 sq.ft</span>
+                            <span data-i18n="suite-capacity-2">2 Guests</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-forestDark mb-3" data-i18n="suite1-name">Suite Royale Shéhérazade</h3>
+                        <p class="text-xs sm:text-sm text-charcoalMuted font-light leading-relaxed mb-6" data-i18n="suite1-desc">
+                            Carved cedarwood ceilings, an artisan freestanding copper soaking tub, and a private balcony overlooking the fragrant courtyard fountain.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] text-charcoalMuted font-sans">
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">King Bed</span>
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Copper Tub</span>
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Private Balcony</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 pt-0">
+                    <button onclick="openBookingModal('Suite Royale Shéhérazade')" class="w-full bg-forestGreen hover:bg-forestDark text-warmIvory py-3 text-xs tracking-widest uppercase font-medium transition-colors">
+                        <span data-i18n="btn-book-suite">Book Suite</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Suite 2: Suite Majorelle -->
+            <div class="bg-ivoryCard border border-ivoryBorder overflow-hidden group flex flex-col justify-between editorial-shadow">
+                <div>
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Suite Majorelle" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-forestDark/80 text-warmIvory text-[11px] px-3 py-1 font-serif tracking-widest">
+                            <span data-i18n="suite2-rate">€280 / Night</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center text-[11px] text-mutedGold tracking-widest uppercase font-medium mb-2">
+                            <span>48 m² / 515 sq.ft</span>
+                            <span data-i18n="suite-capacity-2">2 Guests</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-forestDark mb-3" data-i18n="suite2-name">Suite Bleu Majorelle</h3>
+                        <p class="text-xs sm:text-sm text-charcoalMuted font-light leading-relaxed mb-6" data-i18n="suite2-desc">
+                            Inspired by the iconic cobalt pigments of Jacques Majorelle. Features an expansive walk-in tadelakt rain shower and intimate lounge corner.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] text-charcoalMuted font-sans">
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">King Bed</span>
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Tadelakt Shower</span>
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Lounge Area</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 pt-0">
+                    <button onclick="openBookingModal('Suite Bleu Majorelle')" class="w-full bg-forestGreen hover:bg-forestDark text-warmIvory py-3 text-xs tracking-widest uppercase font-medium transition-colors">
+                        <span data-i18n="btn-book-suite">Book Suite</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Suite 3: Chambre Ambre & Tadelakt -->
+            <div class="bg-ivoryCard border border-ivoryBorder overflow-hidden group flex flex-col justify-between editorial-shadow">
+                <div>
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Chambre Ambre" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-forestDark/80 text-warmIvory text-[11px] px-3 py-1 font-serif tracking-widest">
+                            <span data-i18n="suite3-rate">€210 / Night</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center text-[11px] text-mutedGold tracking-widest uppercase font-medium mb-2">
+                            <span>36 m² / 390 sq.ft</span>
+                            <span data-i18n="suite-capacity-2">2 Guests</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-forestDark mb-3" data-i18n="suite3-name">Chambre Ambre & Cuivre</h3>
+                        <p class="text-xs sm:text-sm text-charcoalMuted font-light leading-relaxed mb-6" data-i18n="suite3-desc">
+                            A serene haven dressed in natural desert tones, hand-woven Berber wool rugs, and direct level access to the central swimming pool patio.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] text-charcoalMuted font-sans">
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Queen Bed</span>
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Patio Access</span>
+                            <span class="bg-warmIvory px-2.5 py-1 border border-ivoryBorder">Artisan Textiles</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 pt-0">
+                    <button onclick="openBookingModal('Chambre Ambre & Cuivre')" class="w-full bg-forestGreen hover:bg-forestDark text-warmIvory py-3 text-xs tracking-widest uppercase font-medium transition-colors">
+                        <span data-i18n="btn-book-suite">Book Suite</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Full Privatization Note -->
+        <div class="mt-12 p-8 border border-mutedGold/30 bg-forestDark text-warmIvory flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="text-mutedGold text-xs uppercase tracking-widest font-medium" data-i18n="privatize-tag">Exclusive Buyout</span>
+                <h4 class="font-serif text-2xl text-warmIvory mt-1" data-i18n="privatize-heading">Private Riad Privatization</h4>
+                <p class="text-xs sm:text-sm text-warmIvory/70 font-light mt-1 max-w-xl" data-i18n="privatize-text">
+                    Reserve all 7 suites exclusively for private family retreats, intimate gatherings, or weddings. Includes private dedicated chef and butler service.
+                </p>
+            </div>
+            <button onclick="openBookingModal('Full Riad Privatization')" class="bg-mutedGold hover:bg-mutedGoldHover text-forestDark font-sans font-semibold text-xs tracking-widest uppercase px-6 py-3 whitespace-nowrap transition-colors">
+                <span data-i18n="btn-inquire-privatize">Inquire Buyout</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- SECTION 4: IMMERSIVE PHOTO GALLERY -->
+    <section id="gallery" class="py-28 bg-forestDark text-warmIvory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-mutedGold text-xs tracking-widest uppercase font-medium block mb-3" data-i18n="gallery-tag">Curated Atmosphere</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-normal mb-4" data-i18n="gallery-title">Immersive Gallery</h2>
+                <div class="w-12 h-[1px] bg-mutedGold mx-auto mb-6"></div>
+                <p class="font-sans text-xs sm:text-sm text-warmIvory/70 font-light leading-relaxed" data-i18n="gallery-desc">
+                    Visual impressions of timeless architecture, tranquil shadows, and handcrafted Moroccan details.
+                </p>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterGallery('all')" class="gal-filter active px-4 py-1.5 border border-mutedGold text-xs tracking-widest uppercase transition-all bg-mutedGold text-forestDark font-medium" data-cat="all" data-i18n="gal-all">All</button>
+                    <button onclick="filterGallery('courtyard')" class="gal-filter px-4 py-1.5 border border-warmIvory/20 hover:border-mutedGold text-xs tracking-widest uppercase transition-all text-warmIvory/80" data-cat="courtyard" data-i18n="gal-patio">Courtyard & Pool</button>
+                    <button onclick="filterGallery('suites')" class="gal-filter px-4 py-1.5 border border-warmIvory/20 hover:border-mutedGold text-xs tracking-widest uppercase transition-all text-warmIvory/80" data-cat="suites" data-i18n="gal-suites">Suites</button>
+                    <button onclick="filterGallery('dining')" class="gal-filter px-4 py-1.5 border border-warmIvory/20 hover:border-mutedGold text-xs tracking-widest uppercase transition-all text-warmIvory/80" data-cat="dining" data-i18n="gal-dining">Dining</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid with Lightbox Trigger -->
+            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                <!-- Image 1 -->
+                <div class="gal-item courtyard group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1600&q=85', 'Courtyard Patio & Plunge Pool')">
+                    <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Courtyard Patio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gal-item suites group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85', 'Royal Suite & High Cedar Ceilings')">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Royal Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gal-item dining group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1600&q=85', 'Fresh Mint Tea Ceremony')">
+                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Mint Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gal-item courtyard group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=85', 'Hand-chiselled Zellige Tilework')">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80" alt="Zellige Tilework" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gal-item suites group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=85', 'Warm Amber Chamber Interior')">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Amber Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gal-item dining group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=1600&q=85', 'Traditional Tagine Dining')">
+                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80" alt="Traditional Tagine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gal-item courtyard group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=85', 'Arched Courtyard Architecture')">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Arched Courtyard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gal-item suites group relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=85', 'Botanical Wellness & Spa Atmosphere')">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Spa Wellness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-forestDark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-6 h-6 text-warmIvory"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: LOCATION, MAP PLACEHOLDER & CONTACT -->
+    <section id="location" class="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Info & Map Placeholder (5 cols) -->
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <span class="text-mutedGold text-xs tracking-widest uppercase font-medium block mb-2" data-i18n="loc-tag">Finding The Sanctuary</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-forestDark font-normal mb-4" data-i18n="loc-heading">Location & Access</h2>
+                    <p class="text-xs sm:text-sm text-charcoalMuted font-light leading-relaxed" data-i18n="loc-desc">
+                        Tucked peacefully in Derb Sidi Ishak within Marrakech's ancient Medina, reachable via a picturesque short walk from Bab Taghzout or the Mouassine gate.
+                    </p>
+                </div>
+
+                <!-- Map Placeholder with Luxury Styling -->
+                <div class="relative w-full h-64 bg-ivoryCard border border-ivoryBorder rounded-sm overflow-hidden flex flex-col items-center justify-center text-center p-6 shadow-sm">
+                    <!-- Stylized SVG Map Graphics -->
+                    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#18332A 1px, transparent 1px); background-size: 16px 16px;"></div>
+                    <div class="w-12 h-12 rounded-full bg-forestGreen text-mutedGold flex items-center justify-center mb-3 shadow-md">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-serif text-lg text-forestDark" data-i18n="map-title">Medina Marrakech Coordinates</span>
+                    <span class="text-[11px] text-charcoalMuted tracking-wider mt-1">31.6318° N, 7.9890° W</span>
+                    <span class="text-[10px] text-mutedGold uppercase tracking-widest mt-2 block" data-i18n="map-placeholder-note">[Interactive Map Placeholder - GPS Guides Provided on Booking]</span>
+                </div>
+
+                <!-- Landmark Distances -->
+                <div class="space-y-3 text-xs text-charcoalMuted border-t border-ivoryBorder pt-6 font-light">
+                    <div class="flex justify-between py-1 border-b border-ivoryBorder/50">
+                        <span data-i18n="dist-1-name">Le Jardin Secret</span>
+                        <span class="font-medium text-forestDark" data-i18n="dist-1-time">4 min walk</span>
+                    </div>
+                    <div class="flex justify-between py-1 border-b border-ivoryBorder/50">
+                        <span data-i18n="dist-2-name">Jemaa el-Fna Square</span>
+                        <span class="font-medium text-forestDark" data-i18n="dist-2-time">8 min walk</span>
+                    </div>
+                    <div class="flex justify-between py-1 border-b border-ivoryBorder/50">
+                        <span data-i18n="dist-3-name">Jardin Majorelle & YSL Museum</span>
+                        <span class="font-medium text-forestDark" data-i18n="dist-3-time">10 min private transfer</span>
+                    </div>
+                    <div class="flex justify-between py-1 border-b border-ivoryBorder/50">
+                        <span data-i18n="dist-4-name">Marrakech Menara Airport (RAK)</span>
+                        <span class="font-medium text-forestDark" data-i18n="dist-4-time">18 min private transfer</span>
+                    </div>
+                </div>
+
+                <!-- Dedicated WhatsApp Button Box -->
+                <div class="p-6 bg-forestDark text-warmIvory border border-mutedGold/40 flex items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] tracking-widest uppercase text-mutedGold block mb-1" data-i18n="wa-box-tag">Direct Messenger</span>
+                        <h4 class="font-serif text-lg text-warmIvory" data-i18n="wa-box-title">WhatsApp Concierge</h4>
+                        <span class="text-[11px] text-warmIvory/60 block mt-0.5">+212 600 000 000 [Placeholder]</span>
+                    </div>
+                    <a href="https://wa.me/212600000000?text=Salam,%20I%20would%20like%20to%20inquire%20about%20a%20stay%20at%20Riad%20L'Ambre%20d'Or" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-3 rounded-full transition-colors" title="Message via WhatsApp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Contact & Inquiry Form (7 cols) -->
+            <div id="contact" class="lg:col-span-7 bg-ivoryCard p-8 sm:p-12 border border-ivoryBorder editorial-shadow">
+                <span class="text-mutedGold text-xs tracking-widest uppercase font-medium block mb-2" data-i18n="contact-tag">Direct Palace Inquiries</span>
+                <h3 class="font-serif text-3xl text-forestDark mb-4" data-i18n="contact-heading">Plan Your Marrakech Journey</h3>
+                <p class="text-xs sm:text-sm text-charcoalMuted font-light leading-relaxed mb-8" data-i18n="contact-sub">
+                    Our Maitre de Maison is at your disposal for suite availability, private dining requests, or custom Sahara transfers.
+                </p>
+
+                <form id="direct-contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="label-name">Full Name *</label>
+                            <input type="text" required placeholder="Clara DuPont" class="w-full bg-warmIvory border border-ivoryBorder px-4 py-3 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="label-email">Email Address *</label>
+                            <input type="email" required placeholder="clara@example.com" class="w-full bg-warmIvory border border-ivoryBorder px-4 py-3 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="label-phone">Telephone / WhatsApp</label>
+                            <input type="tel" placeholder="+33 6 00 00 00 00" class="w-full bg-warmIvory border border-ivoryBorder px-4 py-3 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="label-inquiry-type">Topic of Interest</label>
+                            <select class="w-full bg-warmIvory border border-ivoryBorder px-4 py-3 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                                <option value="Suite Stay" data-i18n="opt-stay">Suite Reservation</option>
+                                <option value="Hammam" data-i18n="opt-hammam">Hammam & Spa Ritual</option>
+                                <option value="Dinner" data-i18n="opt-dinner">Rooftop Candlelit Dinner</option>
+                                <option value="Privatization" data-i18n="opt-privatize">Exclusive Riad Buyout</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="label-message">Your Message or Intended Dates *</label>
+                        <textarea rows="4" required placeholder="Please let us know your planned travel dates, guest count, or bespoke arrangements..." class="w-full bg-warmIvory border border-ivoryBorder px-4 py-3 text-xs text-charcoal focus:outline-none focus:border-mutedGold"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-forestGreen hover:bg-forestDark text-warmIvory py-4 text-xs tracking-widest uppercase font-medium transition-colors border border-mutedGold/40">
+                        <span data-i18n="btn-send-inquiry">Send Inquiry</span>
+                    </button>
+                </form>
+
+                <div id="contact-feedback" class="hidden mt-6 p-4 bg-forestDark text-warmIvory text-xs border border-mutedGold text-center">
+                    <span data-i18n="contact-feedback-msg">Shukran! Your inquiry has been transmitted. Our host team will reply within a few hours.</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PREMIUM EDITORIAL FOOTER -->
+    <footer class="bg-forestDark text-warmIvory/80 pt-20 pb-12 border-t border-mutedGold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-warmIvory/10 text-xs font-light">
+                
+                <!-- Col 1: Identity & Heritage -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rotate-45 border border-mutedGold bg-forestLight inline-block"></span>
+                        <span class="font-title text-lg tracking-widest text-warmIvory font-bold uppercase">L'Ambre d'Or</span>
+                    </div>
+                    <p class="text-warmIvory/70 leading-relaxed font-sans text-xs" data-i18n="footer-brand-p">
+                        An architectural retreat in the Medina of Marrakech, dedicated to slow living, authentic craftsmanship, and refined Moroccan hospitality.
+                    </p>
+                    <div class="pt-2">
+                        <span class="text-[11px] text-mutedGold tracking-wider uppercase block">Derb Sidi Ishak, Marrakech</span>
+                        <span class="text-[10px] text-warmIvory/50 block mt-1 font-mono">Fictional Luxury Hotel Showcase</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="font-title text-warmIvory tracking-widest uppercase mb-4 text-xs font-semibold text-mutedGold" data-i18n="footer-nav-title">Navigation</h4>
+                    <ul class="space-y-2.5 text-warmIvory/70">
+                        <li><a href="#about" class="hover:text-mutedGold transition-colors" data-i18n="nav-riad">The Riad</a></li>
+                        <li><a href="#hospitality" class="hover:text-mutedGold transition-colors" data-i18n="nav-hospitality">Hospitality & Living</a></li>
+                        <li><a href="#rooms" class="hover:text-mutedGold transition-colors" data-i18n="nav-rooms">Suites & Rooms</a></li>
+                        <li><a href="#gallery" class="hover:text-mutedGold transition-colors" data-i18n="nav-gallery">Photo Gallery</a></li>
+                        <li><a href="#location" class="hover:text-mutedGold transition-colors" data-i18n="nav-location">Location & Access</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Gastronomy & Wellness -->
+                <div>
+                    <h4 class="font-title text-warmIvory tracking-widest uppercase mb-4 text-xs font-semibold text-mutedGold" data-i18n="footer-exp-title">Experiences</h4>
+                    <ul class="space-y-2.5 text-warmIvory/70">
+                        <li><span class="hover:text-mutedGold cursor-pointer">Private Marble Hammam</span></li>
+                        <li><span class="hover:text-mutedGold cursor-pointer">Traditional Moroccan Breakfast</span></li>
+                        <li><span class="hover:text-mutedGold cursor-pointer">Rooftop Sunset Stargazing</span></li>
+                        <li><span class="hover:text-mutedGold cursor-pointer">Culinary Workshops with Dada</span></li>
+                        <li><span class="hover:text-mutedGold cursor-pointer">VIP Menara Airport Chauffeur</span></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter & Social -->
+                <div>
+                    <h4 class="font-title text-warmIvory tracking-widest uppercase mb-4 text-xs font-semibold text-mutedGold" data-i18n="footer-news-title">Gazette & Letters</h4>
+                    <p class="text-warmIvory/70 text-xs mb-4" data-i18n="footer-news-desc">Receive seasonal chronicles and private invitation rates from Marrakech.</p>
+                    <form onsubmit="handleNewsletter(event)" class="flex">
+                        <input type="email" required placeholder="your.email@address.com" class="bg-black/30 border border-warmIvory/20 px-3.5 py-2.5 text-xs text-warmIvory w-full focus:outline-none focus:border-mutedGold">
+                        <button type="submit" class="bg-mutedGold hover:bg-mutedGoldHover text-forestDark font-semibold px-4 text-xs tracking-wider uppercase">OK</button>
+                    </form>
+                    <div id="newsletter-status" class="hidden text-[11px] text-mutedGold mt-2" data-i18n="newsletter-thanks">Thank you for joining our private circle.</div>
+
+                    <!-- Social links -->
+                    <div class="flex items-center space-x-4 mt-6 text-warmIvory/70">
+                        <a href="#" class="hover:text-mutedGold transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-mutedGold transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="https://wa.me/212600000000" target="_blank" class="hover:text-mutedGold transition-colors" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Disclaimer & Copyright -->
+            <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-warmIvory/50 gap-4">
+                <p>© <span id="year"></span> Riad L'Ambre d'Or Marrakech. All fictional business details are for design demonstration.</p>
+                <div class="flex items-center space-x-6">
+                    <span>Privacy Policy</span>
+                    <span>Terms & Stay Conditions</span>
+                    <span class="text-mutedGold">Marrakech Medina Hospitality</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PERSISTENT FLOATING WHATSAPP BUTTON (CONCIERGE) -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center group">
+        <div class="hidden sm:flex mr-3 bg-warmIvory text-forestDark px-3.5 py-1.5 shadow-xl border border-ivoryBorder text-xs font-medium items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span data-i18n="wa-bubble">WhatsApp Concierge</span>
+        </div>
+        <a href="https://wa.me/212600000000?text=Salam!%20I%20would%20like%20to%20inquire%20about%20a%20stay%20at%20Riad%20L'Ambre%20d'Or" target="_blank" class="w-14 h-14 bg-emerald-700 hover:bg-emerald-800 text-warmIvory rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-105 duration-300 border border-mutedGold/40" aria-label="WhatsApp Contact">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <!-- BOOKING RESERVATION MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-forestDark/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-warmIvory w-full max-w-lg shadow-2xl border border-mutedGold overflow-hidden relative animate-in fade-in zoom-in duration-200">
+            <!-- Modal Header -->
+            <div class="bg-forestDark p-6 text-warmIvory flex items-center justify-between border-b border-mutedGold/30">
+                <div>
+                    <span class="text-mutedGold text-[10px] tracking-widest uppercase font-sans font-medium block" data-i18n="modal-tag">Direct Riad Reservation</span>
+                    <h3 class="font-serif text-2xl text-warmIvory" data-i18n="modal-title">Reserve Your Stay</h3>
+                </div>
+                <button onclick="closeBookingModal()" class="text-warmIvory/60 hover:text-warmIvory">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Form -->
+            <form id="reservation-form" onsubmit="handleReservationSubmit(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-suite-select">Select Suite</label>
+                    <select id="modal-suite-input" class="w-full bg-ivoryCard border border-ivoryBorder px-3.5 py-2.5 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                        <option value="Suite Royale Shéhérazade">Suite Royale Shéhérazade (€340 / night)</option>
+                        <option value="Suite Bleu Majorelle">Suite Bleu Majorelle (€280 / night)</option>
+                        <option value="Chambre Ambre & Cuivre">Chambre Ambre & Cuivre (€210 / night)</option>
+                        <option value="Full Riad Privatization">Full Riad Privatization (€1,850 / night)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-checkin">Arrival Date</label>
+                        <input type="date" required id="modal-date-in" class="w-full bg-ivoryCard border border-ivoryBorder px-3 py-2 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-checkout">Departure Date</label>
+                        <input type="date" required id="modal-date-out" class="w-full bg-ivoryCard border border-ivoryBorder px-3 py-2 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-guests">Guests</label>
+                        <select class="w-full bg-ivoryCard border border-ivoryBorder px-3 py-2 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4+">4+ Guests (Group)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-transfer">Airport Chauffeur</label>
+                        <select class="w-full bg-ivoryCard border border-ivoryBorder px-3 py-2 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                            <option value="Yes">Yes, private Mercedes (+€30)</option>
+                            <option value="No">No, independent arrival</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-name">Guest Name *</label>
+                        <input type="text" required placeholder="Clara DuPont" class="w-full bg-ivoryCard border border-ivoryBorder px-3 py-2 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-charcoal font-medium mb-1" data-i18n="modal-email">Email Address *</label>
+                        <input type="email" required placeholder="clara@example.com" class="w-full bg-ivoryCard border border-ivoryBorder px-3 py-2 text-xs text-charcoal focus:outline-none focus:border-mutedGold">
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-forestGreen hover:bg-forestDark text-warmIvory font-sans text-xs tracking-widest uppercase py-3.5 transition-colors border border-mutedGold/40 font-medium">
+                        <span data-i18n="modal-submit-btn">Request Reservation</span>
+                    </button>
+                    <p class="text-[10px] text-center text-charcoalMuted mt-2" data-i18n="modal-guarantee">
+                        Best Rate Guaranteed • No instant card charging • Fictional Demonstration
+                    </p>
+                </div>
+            </form>
+
+            <!-- Success State -->
+            <div id="modal-success" class="hidden p-8 text-center space-y-4">
+                <div class="w-12 h-12 rounded-full bg-forestGreen text-mutedGold flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-serif text-2xl text-forestDark" data-i18n="modal-success-title">Reservation Inquiry Received</h4>
+                <p class="text-xs text-charcoalMuted leading-relaxed font-sans max-w-sm mx-auto" data-i18n="modal-success-text">
+                    Marhaban! Your reservation request has been registered in our showcase system. Our Maitre de Maison will contact you shortly with formal voucher confirmation.
+                </p>
+                <button onclick="closeBookingModal()" class="bg-mutedGold hover:bg-mutedGoldHover text-forestDark px-6 py-2.5 text-xs tracking-widest uppercase font-semibold">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-forestDark/95 flex flex-col items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-warmIvory hover:text-mutedGold p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="max-w-4xl max-h-[80vh] flex flex-col items-center">
+            <img id="lightbox-image" src="" alt="Enlarged gallery view" class="max-w-full max-h-[75vh] object-contain border border-mutedGold/30 shadow-2xl">
+            <p id="lightbox-caption" class="text-warmIvory font-serif text-lg tracking-wider mt-4 text-center italic"></p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT: LOGIC, TRANSLATIONS, LIGHTBOX, MODAL -->
+    <script>
+        // Update year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set default dates for reservation modal
+        const today = new Date();
+        const checkInDate = new Date(today);
+        checkInDate.setDate(checkInDate.getDate() + 3);
+        const checkOutDate = new Date(checkInDate);
+        checkOutDate.setDate(checkOutDate.getDate() + 4);
+
+        const formatDateISO = (d) => d.toISOString().split('T')[0];
+        document.getElementById('modal-date-in').value = formatDateISO(checkInDate);
+        document.getElementById('modal-date-out').value = formatDateISO(checkOutDate);
+
+        // BILINGUAL TRANSLATION DICTIONARY
+        const i18n = {
+            en: {
+                "top-address": "Derb Sidi Ishak, Medina, 40000 Marrakech, Morocco",
+                "fictional-badge": "[Fictional Showcase Concept]",
+                "nav-riad": "The Riad",
+                "nav-hospitality": "Hospitality",
+                "nav-rooms": "Suites",
+                "nav-gallery": "Gallery",
+                "nav-location": "Location",
+                "nav-contact": "Contact",
+                "btn-book": "Reserve Suite",
+                "hero-tag": "Boutique Riad & Spa • Medina Marrakech",
+                "hero-title": "A Hidden Oasis in the Heart of Marrakech",
+                "hero-subtitle": "Beyond the antique cedar doors lies an architectural sanctuary of carved arches, serene emerald waters, and authentic Moroccan hospitality.",
+                "btn-discover-rooms": "Discover Our Rooms",
+                "btn-whatsapp-hero": "WhatsApp Concierge",
+                "scroll-down": "Explore",
+                "about-tag": "Architectural Heritage",
+                "about-heading-1": "A Restored 18th Century Sanctuary",
+                "about-heading-2": "Crafted with Quiet Reverence",
+                "about-p1": "Located in the historic quarter of the Medina, Riad L'Ambre d'Or was conceived as a private refuge where the vibrant energy of the souks gives way to the gentle murmur of falling water and the fragrance of blossoming bitter orange trees.",
+                "about-p2": "Restored by master Moroccan maalems (artisans), every corner showcases traditional techniques: hand-chiselled zellige tiles from Fez, hand-carved cedarwood ceilings, and polished natural lime plaster (tadelakt). Here, understated luxury meets mindful hospitality.",
+                "stat-suites": "Intimate Suites",
+                "stat-century": "Restored Palace",
+                "stat-views": "Atlas & Medina Vistas",
+                "hosp-tag": "The Art of Living",
+                "hosp-title": "Moroccan Hospitality & Living",
+                "hosp-desc": "A sensory journey steeped in genuine care, from unhurried mornings on the rooftop terrace to the serene embrace of the central courtyard.",
+                "pillar1-sub": "Patio Sanctuary",
+                "pillar1-title": "The Courtyard & Pool",
+                "pillar1-text": "The architectural heart of the riad. An open-sky patio featuring an emerald-tiled plunge pool, towering banana plants, and candlelit lanterns that mirror in calm waters each dusk.",
+                "p1-feat1": "Heated plunge pool year-round",
+                "p1-feat2": "Courtyard lounging & afternoon tea",
+                "pillar2-sub": "Morning Ritual",
+                "pillar2-title": "Artisan Breakfast",
+                "pillar2-text": "Prepared fresh every morning by our resident Dada. Enjoy warm msemen, baghrir honey pancakes, freshly squeezed orange juice, Atlas olive oils, goat cheese, and spiced Moroccan tea.",
+                "p2-feat1": "Served on rooftop or in private suites",
+                "p2-feat2": "Fresh local market produce daily",
+                "pillar3-sub": "Wellness & Purification",
+                "pillar3-title": "The Marble Hammam",
+                "pillar3-text": "Experience centuries-old cleansing rituals. Black eucalyptus soap, ghassoul wraps infused with rosewater, and restorative massage treatments using pure organic argan oil.",
+                "p3-feat1": "Private couple hammam sessions",
+                "p3-feat2": "Organic botanical botanicals",
+                "rooms-tag": "Private Living",
+                "rooms-title": "Rooms & Suites",
+                "rooms-intro": "Each suite is individually curated with hand-woven wool rugs, handcrafted brass fixtures, Egyptian cotton linens, and bespoke ensuite tadelakt bathrooms.",
+                "suite-capacity-2": "2 Guests",
+                "suite1-rate": "€340 / Night",
+                "suite1-name": "Suite Royale Shéhérazade",
+                "suite1-desc": "Carved cedarwood ceilings, an artisan freestanding copper soaking tub, and a private balcony overlooking the fragrant courtyard fountain.",
+                "suite2-rate": "€280 / Night",
+                "suite2-name": "Suite Bleu Majorelle",
+                "suite2-desc": "Inspired by the iconic cobalt pigments of Jacques Majorelle. Features an expansive walk-in tadelakt rain shower and intimate lounge corner.",
+                "suite3-rate": "€210 / Night",
+                "suite3-name": "Chambre Ambre & Cuivre",
+                "suite3-desc": "A serene haven dressed in natural desert tones, hand-woven Berber wool rugs, and direct level access to the central swimming pool patio.",
+                "btn-book-suite": "Book Suite",
+                "privatize-tag": "Exclusive Buyout",
+                "privatize-heading": "Private Riad Privatization",
+                "privatize-text": "Reserve all 7 suites exclusively for private family retreats, intimate gatherings, or weddings. Includes private dedicated chef and butler service.",
+                "btn-inquire-privatize": "Inquire Buyout",
+                "gallery-tag": "Curated Atmosphere",
+                "gallery-title": "Immersive Gallery",
+                "gallery-desc": "Visual impressions of timeless architecture, tranquil shadows, and handcrafted Moroccan details.",
+                "gal-all": "All",
+                "gal-patio": "Courtyard & Pool",
+                "gal-suites": "Suites",
+                "gal-dining": "Dining",
+                "loc-tag": "Finding The Sanctuary",
+                "loc-heading": "Location & Access",
+                "loc-desc": "Tucked peacefully in Derb Sidi Ishak within Marrakech's ancient Medina, reachable via a picturesque short walk from Bab Taghzout or the Mouassine gate.",
+                "map-title": "Medina Marrakech Coordinates",
+                "map-placeholder-note": "[Interactive Map Placeholder - GPS Guides Provided on Booking]",
+                "dist-1-name": "Le Jardin Secret",
+                "dist-1-time": "4 min walk",
+                "dist-2-name": "Jemaa el-Fna Square",
+                "dist-2-time": "8 min walk",
+                "dist-3-name": "Jardin Majorelle & YSL Museum",
+                "dist-3-time": "10 min private transfer",
+                "dist-4-name": "Marrakech Menara Airport (RAK)",
+                "dist-4-time": "18 min private transfer",
+                "wa-box-tag": "Direct Messenger",
+                "wa-box-title": "WhatsApp Concierge",
+                "contact-tag": "Direct Palace Inquiries",
+                "contact-heading": "Plan Your Marrakech Journey",
+                "contact-sub": "Our Maitre de Maison is at your disposal for suite availability, private dining requests, or custom Sahara transfers.",
+                "label-name": "Full Name *",
+                "label-email": "Email Address *",
+                "label-phone": "Telephone / WhatsApp",
+                "label-inquiry-type": "Topic of Interest",
+                "opt-stay": "Suite Reservation",
+                "opt-hammam": "Hammam & Spa Ritual",
+                "opt-dinner": "Rooftop Candlelit Dinner",
+                "opt-privatize": "Exclusive Riad Buyout",
+                "label-message": "Your Message or Intended Dates *",
+                "btn-send-inquiry": "Send Inquiry",
+                "contact-feedback-msg": "Shukran! Your inquiry has been transmitted. Our host team will reply within a few hours.",
+                "footer-brand-p": "An architectural retreat in the Medina of Marrakech, dedicated to slow living, authentic craftsmanship, and refined Moroccan hospitality.",
+                "footer-nav-title": "Navigation",
+                "footer-exp-title": "Experiences",
+                "footer-news-title": "Gazette & Letters",
+                "footer-news-desc": "Receive seasonal chronicles and private invitation rates from Marrakech.",
+                "newsletter-thanks": "Thank you for joining our private circle.",
+                "wa-bubble": "WhatsApp Concierge",
+                "modal-tag": "Direct Riad Reservation",
+                "modal-title": "Reserve Your Stay",
+                "modal-suite-select": "Select Suite",
+                "modal-checkin": "Arrival Date",
+                "modal-checkout": "Departure Date",
+                "modal-guests": "Guests",
+                "modal-transfer": "Airport Chauffeur",
+                "modal-name": "Guest Name *",
+                "modal-email": "Email Address *",
+                "modal-submit-btn": "Request Reservation",
+                "modal-guarantee": "Best Rate Guaranteed • No instant card charging • Fictional Demonstration",
+                "modal-success-title": "Reservation Inquiry Received",
+                "modal-success-text": "Marhaban! Your reservation request has been registered in our showcase system. Our Maitre de Maison will contact you shortly with formal voucher confirmation."
+            },
+            fr: {
+                "top-address": "Derb Sidi Ishak, Médina, 40000 Marrakech, Maroc",
+                "fictional-badge": "[Concept de Démonstration Fictif]",
+                "nav-riad": "Le Riad",
+                "nav-hospitality": "Hospitalité",
+                "nav-rooms": "Suites",
+                "nav-gallery": "Galerie",
+                "nav-location": "Localisation",
+                "nav-contact": "Contact",
+                "btn-book": "Réserver une Suite",
+                "hero-tag": "Riad Boutique & Spa • Médina Marrakech",
+                "hero-title": "Une Oasis Secrète au Cœur de Marrakech",
+                "hero-subtitle": "Au-delà des portes antiques en cèdre s'ouvre un sanctuaire architectural d'arches sculptées, d'eaux calmes émeraude et d'hospitalité marocaine authentique.",
+                "btn-discover-rooms": "Découvrir nos Chambres",
+                "btn-whatsapp-hero": "Conciergerie WhatsApp",
+                "scroll-down": "Explorer",
+                "about-tag": "Héritage Architectural",
+                "about-heading-1": "Un Sanctuaire Restauré du XVIIIe Siècle",
+                "about-heading-2": "Conçu avec une Douce Révérence",
+                "about-p1": "Érigé dans un quartier historique de la Médina, le Riad L'Ambre d'Or a été pensé comme un refuge intime où l'effervescence des souks s'efface devant le bruissement de la fontaine et la fleur d'oranger.",
+                "about-p2": "Restauré par des maalems (maîtres artisans) marocains, chaque recoin honore des savoir-faire séculaires : zelliges ciselés main de Fès, plafonds en cèdre sculpté et tadelakt poli à la chaux naturelle. Un luxe discret au service d'une attention sincère.",
+                "stat-suites": "Suites Confidentielles",
+                "stat-century": "Palais Restauré",
+                "stat-views": "Vues Atlas & Médina",
+                "hosp-tag": "L'Art de Vivre",
+                "hosp-title": "Hospitalité & Art de Vivre Marocain",
+                "hosp-desc": "Un voyage sensoriel tout en bienveillance, des matinées paisibles sur le toit-terrasse à la quiétude du patio central.",
+                "pillar1-sub": "Sanctuaire du Patio",
+                "pillar1-title": "Le Patio & le Bassin",
+                "pillar1-text": "Le cœur architectural du riad. Un patio à ciel ouvert orné d'un bassin de fraîcheur aux carreaux vert émeraude, de bananiers élancés et de lanternes se reflétant dans l'eau au crépuscule.",
+                "p1-feat1": "Bassin chauffé toute l'année",
+                "p1-feat2": "Salons de patio & thé de l'après-midi",
+                "pillar2-sub": "Rituel Matinal",
+                "pillar2-title": "Petit-Déjeuner Artisanal",
+                "pillar2-text": "Préparé chaque matin avec soin par notre Dada résidente. Savourez msemens chauds, crêpes mille-trous au miel, jus d'oranges fraîches pressées, huile d'olive de l'Atlas et thé parfumé.",
+                "p2-feat1": "Servi sur le toit ou en suite privée",
+                "p2-feat2": "Produits du marché local chaque jour",
+                "pillar3-sub": "Bien-Être & Purification",
+                "pillar3-title": "Le Hammam en Marbre",
+                "pillar3-text": "Vivez les rituels purifiants traditionnels. Savon noir à l'eucalyptus, enveloppement au ghassoul parfumé à la rose et massages relaxants à l'huile pure d'argan biologique.",
+                "p3-feat1": "Sessions privées de hammam en duo",
+                "p3-feat2": "Cosmétiques botaniques biologiques",
+                "rooms-tag": "Espaces Privés",
+                "rooms-title": "Suites & Chambres",
+                "rooms-intro": "Chaque suite est décorée de manière unique : tapis berbères en pure laine, robinetterie artisanale en cuivre, linge en coton d'Égypte et salles de bains privatives en tadelakt.",
+                "suite-capacity-2": "2 Invités",
+                "suite1-rate": "340€ / Nuit",
+                "suite1-name": "Suite Royale Shéhérazade",
+                "suite1-desc": "Plafonds en bois de cèdre ciselé, baignoire îlot artisanale en cuivre martelé et balcon privé avec vue sur la fontaine du patio.",
+                "suite2-rate": "280€ / Nuit",
+                "suite2-name": "Suite Bleu Majorelle",
+                "suite2-desc": "Inspirée des pigments de cobalt de Jacques Majorelle. Comprend une vaste douche à l'italienne en tadelakt et un salon intime.",
+                "suite3-rate": "210€ / Nuit",
+                "suite3-name": "Chambre Ambre & Cuivre",
+                "suite3-desc": "Un cocon de sérénité paré de tonalités désertiques douces, de tissages berbères et d'un accès de plain-pied au bassin du patio.",
+                "btn-book-suite": "Réserver la Suite",
+                "privatize-tag": "Privatisation Exclusive",
+                "privatize-heading": "Privatisation Complète du Riad",
+                "privatize-text": "Réservez les 7 suites pour vos séjours en famille, retraites ou célébrations privées. Service de chef dédié et majordome inclus.",
+                "btn-inquire-privatize": "Demander une Privatisation",
+                "gallery-tag": "Atmosphère Captivante",
+                "gallery-title": "Galerie Photographique",
+                "gallery-desc": "Impressions visuelles d'une architecture intemporelle, de jeux d'ombres et de détails marocains façonnés à la main.",
+                "gal-all": "Tout",
+                "gal-patio": "Patio & Bassin",
+                "gal-suites": "Suites",
+                "gal-dining": "Saveurs",
+                "loc-tag": "Rejoindre le Sanctuaire",
+                "loc-heading": "Localisation & Accès",
+                "loc-desc": "Niché paisiblement à Derb Sidi Ishak dans la médina historique de Marrakech, accessible à pied par une courte marche depuis Bab Taghzout ou Mouassine.",
+                "map-title": "Coordonnées Médina Marrakech",
+                "map-placeholder-note": "[Emplacement Cartographique - Guidage GPS transmis lors de la réservation]",
+                "dist-1-name": "Le Jardin Secret",
+                "dist-1-time": "4 min à pied",
+                "dist-2-name": "Place Jemaa el-Fna",
+                "dist-2-time": "8 min à pied",
+                "dist-3-name": "Jardin Majorelle & Musée YSL",
+                "dist-3-time": "10 min transfert privé",
+                "dist-4-name": "Aéroport Marrakech-Ménara (RAK)",
+                "dist-4-time": "18 min transfert privé",
+                "wa-box-tag": "Messagerie Directe",
+                "wa-box-title": "Conciergerie WhatsApp",
+                "contact-tag": "Demandes Directes",
+                "contact-heading": "Organiser Votre Séjour",
+                "contact-sub": "Notre Maître de Maison se tient à votre entière disposition pour vos réservations, dîners privés ou transferts vers le désert.",
+                "label-name": "Nom & Prénom *",
+                "label-email": "Adresse Email *",
+                "label-phone": "Téléphone / WhatsApp",
+                "label-inquiry-type": "Objet de la Demande",
+                "opt-stay": "Réservation d'une Suite",
+                "opt-hammam": "Rituel Hammam & Spa",
+                "opt-dinner": "Dîner aux Chandelles sur le Toit",
+                "opt-privatize": "Privatisation Complète du Riad",
+                "label-message": "Votre Message ou Dates Souhaitées *",
+                "btn-send-inquiry": "Envoyer la Demande",
+                "contact-feedback-msg": "Choukrane ! Votre demande a bien été transmise. Notre équipe d'accueil vous répondra rapidement.",
+                "footer-brand-p": "Une demeure de maître dans la Médina de Marrakech, dédiée au temps retrouvé, à l'artisanat noble et à l'hospitalité marocaine.",
+                "footer-nav-title": "Navigation",
+                "footer-exp-title": "Expériences",
+                "footer-news-title": "Gazette & Nouvelles",
+                "footer-news-desc": "Recevez nos chroniques de saison et nos tarifs confidentiels de Marrakech.",
+                "newsletter-thanks": "Merci d'avoir rejoint notre cercle privé.",
+                "wa-bubble": "Conciergerie WhatsApp",
+                "modal-tag": "Réservation Directe au Riad",
+                "modal-title": "Réserver Votre Séjour",
+                "modal-suite-select": "Sélectionner la Suite",
+                "modal-checkin": "Date d'Arrivée",
+                "modal-checkout": "Date de Départ",
+                "modal-guests": "Voyageurs",
+                "modal-transfer": "Chauffeur Aéroport",
+                "modal-name": "Nom Complet *",
+                "modal-email": "Adresse Email *",
+                "modal-submit-btn": "Confirmer la Demande",
+                "modal-guarantee": "Meilleur Tarif Garanti • Aucun débit immédiat • Démonstration Fictive",
+                "modal-success-title": "Demande de Réservation Transmise",
+                "modal-success-text": "Marhaban ! Votre demande a été enregistrée avec succès. Notre Maître de Maison prendra contact avec vous afin d'établir votre bon de confirmation."
+            }
+        };
+
+        let activeLanguage = 'en';
+
+        function setLanguage(lang) {
+            activeLanguage = lang;
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+
+            // Toggle button states
+            const enBtn = document.getElementById('lang-btn-en');
+            const frBtn = document.getElementById('lang-btn-fr');
+            if (lang === 'en') {
+                enBtn.className = "text-mutedGold font-semibold px-1 transition-colors";
+                frBtn.className = "text-warmIvory/60 hover:text-mutedGold px-1 transition-colors";
+                document.documentElement.setAttribute('lang', 'en');
+            } else {
+                frBtn.className = "text-mutedGold font-semibold px-1 transition-colors";
+                enBtn.className = "text-warmIvory/60 hover:text-mutedGold px-1 transition-colors";
+                document.documentElement.setAttribute('lang', 'fr');
+            }
+            lucide.createIcons();
+        }
+
+        // Mobile Nav Drawer Toggle
+        function toggleMobileNav() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+
+        // Gallery Filter System
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gal-item');
+            const buttons = document.querySelectorAll('.gal-filter');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-cat') === category) {
+                    btn.className = "gal-filter active px-4 py-1.5 border border-mutedGold text-xs tracking-widest uppercase transition-all bg-mutedGold text-forestDark font-medium";
+                } else {
+                    btn.className = "gal-filter px-4 py-1.5 border border-warmIvory/20 hover:border-mutedGold text-xs tracking-widest uppercase transition-all text-warmIvory/80";
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox Functions
+        function openLightbox(src, caption) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-image');
+            const cap = document.getElementById('lightbox-caption');
+            img.src = src;
+            cap.textContent = caption;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            lucide.createIcons();
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Reservation Modal System
+        function openBookingModal(suiteName = '') {
+            const modal = document.getElementById('booking-modal');
+            const form = document.getElementById('reservation-form');
+            const success = document.getElementById('modal-success');
+            const select = document.getElementById('modal-suite-input');
+
+            form.classList.remove('hidden');
+            success.classList.add('hidden');
+
+            if (suiteName && select) {
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value.includes(suiteName)) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            lucide.createIcons();
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function handleReservationSubmit(e) {
+            e.preventDefault();
+            document.getElementById('reservation-form').classList.add('hidden');
+            document.getElementById('modal-success').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('contact-feedback');
+            feedback.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 7000);
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const msg = document.getElementById('newsletter-status');
+            msg.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Keyboard navigation (Escape key to exit modals)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeBookingModal();
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
